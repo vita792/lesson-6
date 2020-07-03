@@ -1,15 +1,21 @@
 package com.company;
 
-class Painter {
-    private static Painter id;
-    private static Painter firstName;
-    private static Painter lastName;
-
-    void drawFigure(Class<GeometricFigure> drawClass){
-    }
+public class Painter {
+    private static Painter painter;
+    private static int id;
+    private static String firstName;
+    private static String lastName;
     
- private static final Painter instance = new Painter();
-   public static Painter getInstance() {
-     return instance;
+    public static synchronized Painter getPainter() {
+        if(painter == null){
+            painter = new Painter();
+        }
+     return painter;
 }
-}
+    private Painter(){
+    }
+    public void drawFigure(name,  color){
+        
+       System.out.println();
+    }
+}     
